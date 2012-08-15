@@ -18,16 +18,16 @@ See some graphs below.
  2. AWS account with 1 dollar. We will use 40 micro instances ($0.02/hr) for 1 hour.
 
 **Steps:**
- 1. Dedicated server.
+ 1. Prepare server.
    1. Install fresh Ubuntu 12.04.
    1. Increase limit on open file descriptors: write ```* - nofile 1048576``` to ```/etc/security/limits.conf```. Reboot.
    1. ```git clone git://github.com/ashtuchkin/node-millenium.git``` and run ```node server.js```. Leave this terminal open.
- 1. AWS instances as clients.
+ 1. Set up AWS and ec2-fleet.
    1. Open EC2 control panel of your AWS account https://console.aws.amazon.com/ec2/home
    1. Choose 3 regions where you will launch client instances in. In each of them, go to Security Groups, 
-      choose 'default', go to tab 'Inbound' at the bottom, add custom TCP rule: port 8889, source 0.0.0.0/0. 
+      choose 'default', go to tab 'Inbound' at the bottom, add custom TCP rule: port ```8889```, source ```0.0.0.0/0```. 
       Dont forget to 'Apply Rule Changes'.
-   1. On your laptop, ```git clone git://github.com/ashtuchkin/ec2-fleet.git```. Edit file aws-config.json to add your [AWS security keys](https://portal.aws.amazon.com/gp/aws/securityCredentials) and regions you've chosen.
+   1. On your laptop, ```git clone git://github.com/ashtuchkin/ec2-fleet.git```. Edit file ```aws-config.json``` to add your [AWS security keys](https://portal.aws.amazon.com/gp/aws/securityCredentials) and regions you've chosen.
  1. Start test.
    1. In separate terminal, issue ```./aws.js status```. This will give you an overview of all instances in all regions. Leave this open too.
    1. Start 40 instances in AWS: ```./aws.js start 40```. Wait ~2 minutes while they are starting.
