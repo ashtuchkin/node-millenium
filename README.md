@@ -46,9 +46,17 @@ Dotted line - connection count, with maximum at 1 million.
 <img src="http://s3-eu-west-1.amazonaws.com/habr1/log1cpu-eng1.png"/>
 
 ## Test: node --nouse-idle-notification server.js
+<img src="http://s3-eu-west-1.amazonaws.com/habr1/log2mem-eng.png"/>
+<img src="http://s3-eu-west-1.amazonaws.com/habr1/log2cpu-eng.png"/>
+
+## Test: node --nouse-idle-notification server.js (2 times)
 <img src="http://s3-eu-west-1.amazonaws.com/habr1/log4mem-eng.png"/>
 <img src="http://s3-eu-west-1.amazonaws.com/habr1/log4cpu-eng.png"/>
 
+## Test: node --nouse-idle-notification --expose-gc server.js
+(Garbage collector is manually called every minute)
+<img src="http://s3-eu-west-1.amazonaws.com/habr1/log4mem-eng2.png"/>
+<img src="http://s3-eu-west-1.amazonaws.com/habr1/log4cpu-eng2.png"/>
 
 
 ## License: MIT
