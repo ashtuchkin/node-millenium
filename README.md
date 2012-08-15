@@ -3,7 +3,7 @@
 This is the server part of my test of 1M concurrent connections on Node.js server.
 Client part is [ec2-fleet](https://github.com/ashtuchkin/ec2-fleet) and uses Amazon Web Services.
 
-If you can read Russian, see habrahabr article for more details.
+If you can read Russian, see [habrahabr article](http://habrahabr.ru/post/123154/) for more details.
 
 See some graphs below.
 
